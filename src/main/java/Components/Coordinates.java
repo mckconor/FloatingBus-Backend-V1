@@ -1,12 +1,11 @@
-package Components;
+package components;
 
 public class Coordinates {
+
+	public double latitude, longitude;
 	
-	public double longitude, latitude;
-	
-	public Coordinates (double d, double e) {
-		this.longitude = d;
-		this.latitude = e;
+	public Coordinates(double a, double b) {
+		latitude = a;
+		longitude = b;
 	}
-	
 }
