@@ -28,6 +28,16 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+        <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
             <scope>test</scope>
@@ -37,11 +47,17 @@
 		    <artifactId>optaplanner-core</artifactId>
 		    <version>7.4.1.Final</version>
 		  </dependency>
-		  <dependency>
+		  <!-- <dependency>
 		    <groupId>com.google.firebase</groupId>
 		    <artifactId>firebase-server-sdk</artifactId>
 		    <version>3.0.1</version>
+		</dependency> -->
+		<dependency>
+		  <groupId>com.google.firebase</groupId>
+		  <artifactId>firebase-admin</artifactId>
+		  <version>5.8.0</version>
 		</dependency>
+				
 		<dependency>
 		    <groupId>com.google.maps</groupId>
 		    <artifactId>google-maps-services</artifactId>
@@ -57,7 +73,12 @@
 	        <optional>true</optional>
 	    </dependency>
 	    <dependency> <groupId>org.projectlombok</groupId> <artifactId>lombok</artifactId> <version>1.16.16</version> <scope>provided</scope> </dependency>
-	    
+
+	    <dependency>
+	    	<groupId>com.drewnoakes</groupId>
+	    	<artifactId>metadata-extractor</artifactId>
+	    	<version>2.6.2</version>
+	    </dependency>
     </dependencies>
 
     <properties>
