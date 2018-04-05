@@ -25,24 +25,13 @@ public class RegistrationController {
 	
 	//User reg
 	@RequestMapping("/registerUser")
-	public void RegisterUser(HttpEntity<String> httpEntity, HttpServletRequest request, HttpServletResponse response, @RequestParam("email") String userEmail, @RequestParam("role") boolean isDriver) {
+	public void RegisterUser(HttpEntity<String> httpEntity, HttpServletRequest request, HttpServletResponse response, @RequestParam("email") String userEmail) {
 		User x = new User();
 		x.setEmail(userEmail);
-		if(isDriver) {
-			x.setUserRole(User.DRIVER);
-		} else {
-			x.setUserRole(User.PASSENGER);
-		}
 		
-		userDao.save(x);
-	}
-	
-	//User role, signed up as Driver or Passenger?
-	@RequestMapping("/setRole")
-	public void SetUserRole(HttpEntity<String> httpEntity, HttpServletRequest request, HttpServletResponse response) {
-		User x = userDao.findByEmail(RegistrationHelper.parseEmail(httpEntity.getBody()));
-		x.setUserRole(RegistrationHelper.parseRole(httpEntity.getBody()));
-		userDao.save(x);
+		if(userDao.findByEmail(userEmail) == null) {
+			userDao.save(x);
+		}
 	}
 	
 	//Get users from Firebase

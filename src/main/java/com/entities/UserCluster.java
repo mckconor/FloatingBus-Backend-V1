@@ -7,17 +7,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "usercluster")
+public class UserCluster {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	@Getter
 	private Long id;
-
-	@Getter @Setter
-	private String email;
+	
 }

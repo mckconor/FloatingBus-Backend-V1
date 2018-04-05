@@ -37,7 +37,7 @@ public class Application{
 
     	FirebaseOptions options = new FirebaseOptions.Builder()
     			  .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-    			  .setDatabaseUrl("https://floating-bus-prototype.firebaseio.com")
+    			  .setDatabaseUrl("https://urbancomputing2.firebaseio.com")
     			  .build();
 
 		FirebaseApp.initializeApp(options);

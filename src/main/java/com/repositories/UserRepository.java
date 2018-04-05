@@ -1,5 +1,7 @@
 package com.repositories;
 
+import java.util.Date;
+
 import org.springframework.data.repository.CrudRepository;
 
 import com.entities.User;
